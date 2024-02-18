@@ -50,7 +50,7 @@ namespace AzureADB2C.MVCWebClient.App_Start
                 ResponseType = "id_token",
 
                 // This piece is optional - it is used for displaying the user's name in the navigation bar.
-                TokenValidationParameters = new TokenValidationParameters
+                TokenValidationParameters = new Microsoft.IdentityModel.Tokens.TokenValidationParameters
                 {
                     NameClaimType = "emails",
                     SaveSigninToken = true //important to save the token in boostrapcontext

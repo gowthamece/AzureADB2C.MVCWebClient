@@ -1,9 +1,12 @@
 ﻿@if (Request.IsAuthenticated)
 {
+    var identity = HttpContext.Current.User.Identity as System.Security.Claims.ClaimsIdentity;
+    var name = identity.Claims.First(claim => claim.Type == "name").Value;
+   
     <text>
         <ul class="nav navbar-nav navbar-right">
             <li>
-                <a id="profile-link">@User.Identity.Name</a>
+                <a id="profile-link" style="color:white;padding:10px">Welcome, @name </a>
                 <div id="profile-options" class="nav navbar-nav navbar-right">
                     <ul class="profile-links">
                         <li class="profile-link">
